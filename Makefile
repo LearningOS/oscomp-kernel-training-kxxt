@@ -6,10 +6,16 @@ DEBUG_FILE  ?= $(KERNEL_FILE)
 
 OBJDUMP     := rust-objdump --arch-name=riscv64
 OBJCOPY     := rust-objcopy --binary-architecture=riscv64
+IMG_URL     := https://github.com/os-autograding/testsuits-in-one/raw/gh-pages/fat32.img
 
-all:
+all: fat32.img
 	cargo build --release
 	cp $(KERNEL_FILE) kernel-qemu
+
+fat32.img:
+	@echo "Downloading fat32.img"
+	wget $(IMG_URL) -O fat32.img
+	touch $@
 
 run: all
 	qemu-system-riscv64 \

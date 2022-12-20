@@ -1,7 +1,8 @@
 {
-	"rust-analyzer.checkOnSave.allTargets": false,
-	"rust-analyzer.checkOnSave.extraArgs": [
-		"--target",
-		"riscv64imac-unknown-none-elf"
-	]
+  "rust-analyzer.checkOnSave.allTargets": false,
+  "rust-analyzer.checkOnSave.extraArgs": [
+    "--target",
+    "riscv64imac-unknown-none-elf"
+  ],
+  "editor.renderWhitespace": "all"
 }
